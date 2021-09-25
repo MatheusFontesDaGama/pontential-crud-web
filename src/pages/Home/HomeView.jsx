@@ -15,6 +15,18 @@ const HomeView = () => {
         .catch(() => {})
     }, [])
 
+    const handleDeleteDesenvolvedor = async (id) => {
+        const newContacts = [...desenvolvedores];
+        const urlDelete = `http://localhost:8080/developers/${id}`;
+
+        await axios.delete(urlDelete);
+        await axios.get(url)
+        .then((response) => {
+            setDesenvolvedores(response.data)
+        })
+        .catch(() => {})
+      };
+
     return (
         <>
             <Container>
@@ -32,6 +44,7 @@ const HomeView = () => {
                                 <th>Sexo</th>
                                 <th>Hobby</th>
                                 <th>Data de Nascimento</th>
+                                <th>Excluir</th>
                             </thead>
                             <tbody>
                                 {desenvolvedores.map((desenvolvedor) => (
@@ -41,6 +54,11 @@ const HomeView = () => {
                                         <td>{desenvolvedor.sexo}</td>
                                         <td>{desenvolvedor.hobby}</td>
                                         <td>{desenvolvedor.datanascimento}</td>
+                                        <td>
+                                            <button type="button" onClick={() => handleDeleteDesenvolvedor(desenvolvedor.id)}>
+                                                Delete
+                                            </button>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
