@@ -1,0 +1,1 @@
+export { CadastroContainer as default } from "./CadastroContainer";
