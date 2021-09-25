@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Col, Container, Row } from "react-awesome-styled-grid"
 import { useForm } from "react-hook-form"
+import { Link } from "react-router-dom";
 
 const CadastroView = () => {
 
@@ -23,6 +24,13 @@ const CadastroView = () => {
                         <Row>
                             <Col>
                                 <h2>Cadastro de Desenvolvedores</h2>
+                            </Col>
+                            <Col>
+                                <Link to="/">
+                                    <button type="button">
+                                        Home
+                                    </button>
+                                </Link>
                             </Col>
                         </Row>
                         <Row style= {{ marginTop: '24px'}}>

@@ -11,7 +11,7 @@ const RouterConfig = () => {
             <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/cadastro" component={CadastroPage} />
-                <Route exact path="/edicao" component={EdicaoPage} />
+                <Route exact path="/edicao/:id" name="edicao" component={EdicaoPage} />
             </Switch>
         </BrowserRouter>
     )
