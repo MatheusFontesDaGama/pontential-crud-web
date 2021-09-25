@@ -16,7 +16,6 @@ const HomeView = () => {
     }, [])
 
     const handleDeleteDesenvolvedor = async (id) => {
-        const newContacts = [...desenvolvedores];
         const urlDelete = `http://localhost:8080/developers/${id}`;
 
         await axios.delete(urlDelete);
